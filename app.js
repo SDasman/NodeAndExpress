@@ -9,7 +9,19 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var api = require('./routes/api');
 
+// var db;
+// var MongoClient = require('mongodb').MongoClient;
+
+
 var app = express();
+
+// Connect to the db
+// MongoClient.connect("mongodb://localhost:27017/test", function(err, database) {
+//   if(!err) {
+//     console.log("We are connected");
+//     db = database;
+//   }
+// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +34,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// app.use(function(req,res,next){
+//     req.db = db;
+//     next();
+// });
 
 app.use('/', index);
 app.use('/users', users);

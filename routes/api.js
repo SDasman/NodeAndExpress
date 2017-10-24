@@ -6,6 +6,14 @@ router.get('/test', function(req, res, next) {
   	res.send(JSON.stringify({'test':123}));
 });
 
+// router.get('/mongo', function(req, res, next) {
+// 	var db = req.db;
+// 	db.collection("inventory").find({"name":"apple"}).toArray(function(err,docs){
+// 		res.setHeader('Content-Type', 'application/json');
+// 		res.send(JSON.stringify(docs));	
+// 	});
+// });
+
 router.post('/evenOrOdd', function(req, res, next) {
 	if(req && req.body && req.body.numberInput && !isNaN(req.body.numberInput)){
 		var input = parseInt(req.body.numberInput);
