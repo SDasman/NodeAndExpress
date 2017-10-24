@@ -10,12 +10,14 @@
     <div ng-controller="appCtrl">
       <h1>{{greeting.text}}</h1>
       <p>Welcome to <%= title %></p>
+      <h2>GET call example</h2>
       <button ng-click="apiCall()">Load Data</button>
       <div ng-if="response">
         <p>data loaded!</p>
         <pre>{{response}}</pre>
       </div>
       <hr/>
+      <h2>POST call example</h2>
       <form ng-submit="formSubmit()">
         <input ng-model="numberInput" type="number"/>
         <button type="submit">Submit</button>
