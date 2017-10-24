@@ -15,6 +15,12 @@
         <p>data loaded!</p>
         <pre>{{response}}</pre>
       </div>
+      <hr/>
+      <form ng-submit="formSubmit()">
+        <input ng-model="numberInput" type="number"/>
+        <button type="submit">Submit</button>
+        <pre ng-if="formMessage">{{formMessage}}</pre>
+      </form>
     </div>
   </body>
 </html>
