@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="appname">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+  </head>
+  <body>
+  	<div ng-controller="appCtrl">
+    	<h1>{{greeting.text}}</h1>
+    	<p>Welcome to <%= title %></p>
+      <button ng-click="apiCall()">Load Data</button>
+      <div ng-if="response">
+        <p>data loaded!</p>
+        <pre>{{response}}</pre>
+      </div>
+	</div>
+  </body>
+</html>
